@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Coração vermelho.png" type="image/png">
+    <title>Eu te amo muitão!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            min-height: 100%;
+            background: linear-gradient(0deg, rgba(76,27,111,1) 0%, rgba(27,0,58,1) 65%);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            font-family: Comic Sans MS, Comic Sans, cursive;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .musica {
+            position: absolute;
+            top: 0;
+        }
+
+        .controle {
+            position: relative;
+            max-width: 23rem;
+            margin: 0 auto;
+            text-align: space-between;
+            display: flex;
+            align-items: center;
+         
+        }
+
+        .imagem {
+            display: flex;
+            overflow-x: hidden;
+            aspect-ratio: 16/9;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.5);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: 0.3s ease-in-out;
+            scroll-snap-align: start;
+            width: 1000%;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .imagem img {
+            flex: 1 0 auto;
+            scroll-snap-align: start;
+            object-fit: cover;
+        }
+
+        .bolinhas {
+            display: flex;
+            column-gap: 1rem;
+            position: absolute;
+            bottom: 1.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .bolinhas a {
+            width: 0.5rem;
+            height: 0.5rem;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.75;
+            transition: opacity ease 250ms;
+            cursor: pointer;
+        }
+
+        .bolinhas a:hover {
+            opacity: 1;
+        }
+
+        .horario {
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 30px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border: 2px solid white;
+            border-radius: 2px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .horario2 {
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 30px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border: 2px solid white;
+            border-radius: 2px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+        button{
+            background-color: white;
+            color: #333; 
+            border: 2px solid #ccc; 
+            border-radius: 50%;
+            display: flex;
+            font-size: 16px; 
+            font-weight: bold;
+            cursor: pointer; 
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease; 
+            height: 30px;
+            padding: 0 10px;
+            margin: -15px; 
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button:hover {
+            background-color: #f0f0f0;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>Eu te amo!!</h1>
+    <div class="musica">
+        <audio autoplay loop>
+            <source src="Edu Ribeiro - Me Namora.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <div class="controle">
+        <button class="proximo">❮</button>
+        <div class="imagem" id="imagens">
+            <img src="IMG-20250127-WA0044.jpg" alt="" id="img1">
+            <img src="IMG-20250309-WA0046.jpg" alt="" id="img2">
+            <img src="IMG-20250309-WA0053.jpg" alt="" id="img3">
+            <img src="IMG-20250309-WA0054.jpg" alt="" id="img4">
+            <img src="IMG-20250309-WA0058.jpg" alt="" id="img5">
+            <img src="IMG_20250117_232626_482.jpg" alt="" id="img6">
+            <img src="IMG_20250306_194101_785.jpg" alt="" id="img7">
+            <img src="IMG_20250306_194259_905.jpg" alt="" id="img8">
+            <img src="IMG_20250306_194341_885.jpg" alt="" id="img9">
+            <img src="IMG_20250306_194454_754.jpg" alt="" id="img10">
+        </div>
+        <button class="anterior">❯</button>
+        <div class="bolinhas">
+            <a href="#img1"></a>
+            <a href="#img2"></a>
+            <a href="#img3"></a>
+            <a href="#img4"></a>
+            <a href="#img5"></a>
+            <a href="#img6"></a>
+            <a href="#img7"></a>
+            <a href="#img8"></a>
+            <a href="#img9"></a>
+            <a href="#img10"></a>
+        </div>
+    </div>
+
+    <div class="horario">
+        <p>Tempo de namoro(27/02/2025): </p>
+        <p id="namoro">0d 0h 0m 0s</p>
+    </div>
+    <div class="horario2">
+        <p>Nosso primeiro Beijo(25/12/2024): </p>
+        <p id="beijo">0d 0h 0m 0s</p>
+    </div>
+    
+
+    <script>
+        const namorotime = document.getElementById('namoro');
+        const dataInicio = new Date('2025-02-27 00:00:00');
+        setInterval(() => {
+            const dataAtual = new Date();
+            const diferenca = dataAtual - dataInicio;
+            const segundos = Math.floor(diferenca / 1000);
+            const minutos = Math.floor(segundos / 60);
+            const horas = Math.floor(minutos / 60);
+            const dias = Math.floor(horas / 24);
+            namorotime.textContent = `${dias}d ${horas % 24}h ${minutos % 60}m ${segundos % 60}s`;
+        }, 1000);
+
+        const beijotime = document.getElementById('beijo');
+        const dataInicio2 = new Date('2024-12-25 05:00:00');
+        setInterval(() => {
+            const dataAtual2 = new Date();
+            const diferenca2 = dataAtual2 - dataInicio2;
+            const segundos2 = Math.floor(diferenca2 / 1000);
+            const minutos2 = Math.floor(segundos2 / 60);
+            const horas2 = Math.floor(minutos2 / 60);
+            const dias2 = Math.floor(horas2 / 24);
+            beijotime.textContent = `${dias2}d ${horas2 % 24}h ${minutos2 % 60}m ${segundos2 % 60}s`;
+        }, 1000);
+
+        
+        const carousel = document.getElementById("imagens");
+        const images = carousel.getElementsByTagName("img");
+        let Index = 0;
+        const proximo = document.querySelector(".proximo");
+        const anterior = document.querySelector(".anterior");
+        function moveToImage(direcao) {
+            const imageWidth = images[0].clientWidth;
+            Index += direcao;
+
+            if (Index >= images.length) {
+                Index = 0; 
+            } else if (Index < 0) {
+                Index = images.length - 1; 
+            }   
+
+            carousel.scrollTo({
+                left: imageWidth * Index,
+                behavior: 'smooth'
+            });
+        }
+
+        proximo.addEventListener("click", () => moveToImage(1)); 
+        anterior.addEventListener("click", () => moveToImage(-1)); 
+
+    </script>
+</body>
+</html>
